@@ -234,6 +234,20 @@
         grid-template-columns: repeat(2, auto auto);
     }
   }
+  .map {
+    .map__points {
+        top: 20px;
+        left: 20px;
+        width: 300px;     
+    }
+    .points__header,
+    .points__main {
+        padding: 25px;
+    }
+    .points__items {
+        height: 300px;
+    }
+  }
 }
 @media (max-width: 700px) {
   .series-why_img {
@@ -1002,5 +1016,28 @@
   .modal__form-submit {
     bottom: 2%;
     padding: 10px 70px;
+  }
+  .map {
+    .pm-700 {
+        display: none;
+    }
+    .cards__block {
+        flex-direction: column;
+    }
+    .cards__item {
+        max-width: 320px;
+    }
+    .card__main {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .card__main-ico {
+        width: 200px;
+        height: 100px;
+        align-self: center;
+    }
+    .points__header {
+        padding-bottom: 5px
+    }
   }
 } ;

@@ -274,6 +274,38 @@ window.onload = function () {
   let selectedPoint = document.querySelector('.selected__point');
   let backBtn = document.querySelector('.points__footer-link');
   let selectedPointTitle = document.querySelector('.selected__point .points__item-title');
+  let pointsBody = document.querySelectorAll('.points__main');
+  let openMenuBtns = document.querySelectorAll('.points__header-btn');
+
+
+  function togglingMenu() {
+    pointsBody.forEach(menu => {
+        if (menu.classList.contains('pm-700')) {
+            menu.classList.remove('pm-700');
+        } else {
+            menu.classList.add('pm-700');
+        }
+    });
+  }
+
+  function togglingBtns(btns) {
+    btns.forEach(btn => {
+        if (btn.classList.contains('points__header-more-btn')) {
+            btn.classList.remove('points__header-more-btn');
+            btn.classList.add('points__header-less-btn');
+        } else {
+            btn.classList.remove('points__header-less-btn');
+            btn.classList.add('points__header-more-btn');
+        }
+    })
+  }
+
+  openMenuBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        togglingBtns(openMenuBtns);
+        togglingMenu();
+      });
+  });
 
   let placemarks = [
     {1: [43.13376883378631,131.9223052581915]},
@@ -287,12 +319,17 @@ window.onload = function () {
         zoom: 6
     });
 
-    let placemark = new ymaps.Placemark([43.13376883378631,131.9223052581915], {}, {
-        iconLayout: 'default#image',
-        iconImageHref: '../img/placemark__ico.svg',
-        iconImageSize: [50, 60],
-        iconImageOffset: [0, 0]
-    });
+    placemarks.forEach(item => {
+        let placemark = new ymaps.Placemark(item[Object.keys(item)], {}, {
+            iconLayout: 'default#image',
+            iconImageHref: '../img/placemark__ico.svg',
+            iconImageSize: [50, 60],
+            iconImageOffset: [0, 0]
+        });
+
+        map.geoObjects.add(placemark);
+    })
+    
 
     map.controls.remove('geolocationControl'); // удаляем геолокацию
     map.controls.remove('searchControl'); // удаляем поиск
@@ -303,11 +340,19 @@ window.onload = function () {
     map.controls.remove('rulerControl'); // удаляем контрол правил
     map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
     
-    map.geoObjects.add(placemark);
 
     backBtn.addEventListener('click', () => {
         pointMenu.classList.toggle('hidden');
         selectedPoint.classList.toggle('hidden');
+        pointsBody.forEach(body => {
+            if (body.classList.contains('pm-700')) {
+                body.classList.remove('pm-700')
+                openMenuBtns.forEach(btn => {
+                    btn.classList.remove('points__header-more-btn');
+                    btn.classList.add('points__header-less-btn');
+                })
+            }
+        })
     })
 
     mapButtons.forEach(button => {
@@ -319,9 +364,13 @@ window.onload = function () {
                 let idPoint = button.getAttribute('data-id-point');
                 if (idPoint == Object.keys(mark)) {
                     goToPoint(mark[Object.keys(mark)])
+
                     selectedPointTitle.textContent =
                     document.querySelector(`.points__item[data-id-point='${idPoint}']`)
                     .querySelector('.points__item-title').textContent;
+
+                    togglingMenu();
+                    togglingBtns(openMenuBtns);
                 }
             })
             
