@@ -5475,7 +5475,8 @@ textarea.modal__form-input {
   line-height: 22px;
   white-space: pre-line;
 }
-.vacancy .hidden {
+
+.hidden {
   display: none;
 }
 
@@ -6760,6 +6761,192 @@ textarea.modal__form-input {
 }
 .nutrition-5 .mn-products.p-products1__s-why {
   padding-bottom: 124px;
+}
+
+.map .header__main {
+  background: #32599E;
+}
+.map .header__main p, .map .header__main a {
+  color: #fff;
+}
+.map .header__main .bl-calc {
+  color: #32599E;
+}
+.map .main__bunner,
+.map .footer {
+  background: #32599E;
+}
+.map .main__bunner p, .map .main__bunner a, .map .main__bunner h3,
+.map .footer p,
+.map .footer a,
+.map .footer h3 {
+  color: #fff;
+}
+.map .footer_products1 .footer__l-block__item_1 {
+  background-image: url(../img/header-footer/SSeti_1.svg);
+}
+.map .footer_products1 .footer__l-block__item_2 {
+  background-image: url(../img/header-footer/SSeti_2.svg);
+}
+.map .footer_products1 .footer__l-block__item_3 {
+  background-image: url(../img/header-footer/SSeti_3.svg);
+}
+.map .footer_products1 .footer__l-block__item_4 {
+  background-image: url(../img/header-footer/SSeti_4.svg);
+}
+.map .map__cards {
+  margin: 40px 0;
+}
+.map .cards__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.map .cards__item {
+  padding: 30px;
+  max-width: 610px;
+  width: 100%;
+  border: 1px solid #32599E;
+  border-radius: 30px;
+}
+.map .card__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 20px;
+}
+.map .card__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 21px;
+  color: #32599E;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+.map .card__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 58px;
+}
+.map .card__desc-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+.map .map__container {
+  position: relative;
+  width: 100%;
+  height: 724px;
+}
+.map [class*=copyrights-pane] {
+  display: none !important;
+}
+.map .map__points {
+  position: absolute;
+  top: 42px;
+  left: 100px;
+  width: 386px;
+  height: 600px;
+  z-index: 2;
+}
+.map .points__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 38px 38px 0px 0px;
+  padding: 49px 26px 27px;
+  background: #DCE2EC;
+}
+.map .points__header-input {
+  padding: 8px 17px;
+  width: 100%;
+  border: 0;
+}
+.map .points__header-input::-webkit-input-placeholder {
+  color: #000;
+}
+.map .points__header-input::-moz-placeholder {
+  color: #000;
+}
+.map .points__header-input:-ms-input-placeholder {
+  color: #000;
+}
+.map .points__header-input::-ms-input-placeholder {
+  color: #000;
+}
+.map .points__header-input::placeholder {
+  color: #000;
+}
+.map .points__header-input-btn {
+  background: url("../img/map__down-arrow.svg") no-repeat;
+  background-position: center center;
+  background-color: #32599E;
+  border-radius: 0px 5px 5px 0px;
+  width: 40px;
+  height: 35px;
+  border: 0;
+}
+.map .points__main {
+  background-color: #DCE2EC;
+  padding: 22px 32px;
+  color: #32599E;
+}
+.map .points__items {
+  height: auto;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 450px;
+}
+.map .points__item {
+  background: url("../img/placemark__ico.svg") no-repeat;
+  background-position: center right;
+  background-size: 26px 31px;
+  margin-bottom: 40px;
+}
+.map .points__item:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.map .points__item-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+.map .item__text-link {
+  text-decoration: underline;
+  color: #32599E;
+}
+.map .selected__point .points__main {
+  background: #fff;
+}
+.map .selected__point .points__item {
+  background-image: none;
+}
+.map .selected__point .points__item-text {
+  margin-bottom: 20px;
+}
+.map .selected__point .points__item-text:last-child {
+  margin-bottom: 0;
+}
+.map .points__footer {
+  padding: 27px 30px;
+  background: #DCE2EC;
+  border-radius: 0px 0px 38px 38px;
+}
+.map .points__footer-link {
+  color: #32599E;
+  text-decoration: underline;
 }
 
 @media (max-width: 1024px) {

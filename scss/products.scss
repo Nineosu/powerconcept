@@ -1911,9 +1911,9 @@
         line-height: 22px;
         white-space: pre-line;
     }
-    .hidden {
-        display: none;
-    }
+}
+.hidden {
+    display: none;
 }
 .respond__back {
   padding-left: 107px;
@@ -2897,5 +2897,172 @@
     }
     .mn-products.p-products1__s-why {
         padding-bottom: 124px;
+    }
+}
+
+.map {
+    .header__main {
+        background: #32599E;
+        & p, a {
+            color: #fff;
+        }
+        .bl-calc {
+            color: #32599E;
+        }
+    }
+    .main__bunner,
+    .footer {
+        background: #32599E;
+        & p, a, h3 {
+            color: #fff;
+        }
+    }
+    .footer_products1 .footer__l-block__item {
+        &_1 {
+            background-image: url(../img/header-footer/SSeti_1.svg);
+          }
+          &_2 {
+            background-image: url(../img/header-footer/SSeti_2.svg);
+          }
+          &_3 {
+            background-image: url(../img/header-footer/SSeti_3.svg);
+          }
+          &_4 {
+            background-image: url(../img/header-footer/SSeti_4.svg);
+          }
+    }
+
+    .map__cards {
+        margin: 40px 0;
+    }
+    .cards__block {
+        display: flex;
+        gap: 20px;
+    }
+    .cards__item {
+        padding: 30px;
+        max-width: 610px;
+        width: 100%;
+        border: 1px solid #32599E;
+        border-radius: 30px;
+    }
+    .card__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    .card__title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 21px;
+        color: #32599E; 
+        align-self: center;
+    }
+    .card__main {
+        display: flex;
+        gap: 58px;
+    }
+    .card__desc-title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 21px;
+        margin-bottom: 10px;
+    }
+    
+    .map__container {
+        position: relative;
+        width: 100%;
+        height: 724px;
+    }
+    [class*="copyrights-pane"] {
+        display: none !important;
+    }
+    .map__points {
+        position: absolute;
+        top: 42px;
+        left: 100px;
+        width: 386px;
+        height: 600px;
+        z-index: 2;
+    }
+    .points__header {
+        display: flex;
+        border-radius: 38px 38px 0px 0px;
+        padding: 49px 26px 27px;
+        background: #DCE2EC;
+    }
+    .points__header-input {
+        padding: 8px 17px;
+        width: 100%;
+        border: 0;
+
+        &::placeholder {
+            color: #000;
+        }
+    }
+    .points__header-input-btn {
+        background: url('../img/map__down-arrow.svg') no-repeat;
+        background-position: center center;
+        background-color: #32599E;
+        border-radius: 0px 5px 5px 0px;
+        width: 40px;
+        height: 35px;
+        border: 0;  
+    }
+    .points__main {
+        background-color: #DCE2EC;
+        padding: 22px 32px;
+        color: #32599E;
+    }
+    .points__items {
+        height: auto;
+        overflow: hidden;
+        overflow-y: scroll;
+        height: 450px;
+    }
+    .points__item {
+        background: url('../img/placemark__ico.svg') no-repeat;
+        background-position: center right;
+        background-size: 26px 31px;
+        margin-bottom: 40px;
+    }
+    .points__item:hover {
+        opacity: .7;
+        cursor: pointer;
+    }
+    .points__item-title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 21px;
+        margin-bottom: 10px;
+    }
+    .item__text-link {
+        text-decoration: underline;
+        color: #32599E;
+    }
+    .selected__point {
+        .points__main {
+            background: #fff;
+        }
+        .points__item {
+            background-image: none;
+        }
+        .points__item-text {
+            margin-bottom: 20px;
+        }
+        .points__item-text:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .points__footer {
+        padding: 27px 30px;
+        background: #DCE2EC;
+        border-radius: 0px 0px 38px 38px;
+    }
+    .points__footer-link {
+        color: #32599E;
+        text-decoration: underline;
     }
 }

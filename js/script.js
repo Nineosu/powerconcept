@@ -268,7 +268,73 @@ window.onload = function () {
         }
       })
     })
-  })
+  });
+  let mapButtons = document.querySelectorAll('.points__item');
+  let pointMenu = document.querySelector('.map__points');
+  let selectedPoint = document.querySelector('.selected__point');
+  let backBtn = document.querySelector('.points__footer-link');
+  let selectedPointTitle = document.querySelector('.selected__point .points__item-title');
+
+  let placemarks = [
+    {1: [43.13376883378631,131.9223052581915]},
+    {2: [56.8209452078883,60.602526027484025]},
+    {3: [55.791057181591654,49.112041211730954]},
+    {4: [56.323917424042506,43.93935723889158]}
+  ]
+  function init() {
+    let map = new ymaps.Map('yandex-map', {
+        center: [55.790236237572174,58.94949837657935],
+        zoom: 6
+    });
+
+    let placemark = new ymaps.Placemark([43.13376883378631,131.9223052581915], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: '../img/placemark__ico.svg',
+        iconImageSize: [50, 60],
+        iconImageOffset: [0, 0]
+    });
+
+    map.controls.remove('geolocationControl'); // удаляем геолокацию
+    map.controls.remove('searchControl'); // удаляем поиск
+    map.controls.remove('trafficControl'); // удаляем контроль трафика
+    map.controls.remove('typeSelector'); // удаляем тип
+    map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+    map.controls.remove('rulerControl'); // удаляем контрол правил
+    map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+    
+    map.geoObjects.add(placemark);
+
+    backBtn.addEventListener('click', () => {
+        pointMenu.classList.toggle('hidden');
+        selectedPoint.classList.toggle('hidden');
+    })
+
+    mapButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            pointMenu.classList.toggle('hidden');
+            selectedPoint.classList.toggle('hidden');
+
+            placemarks.forEach(mark => {
+                let idPoint = button.getAttribute('data-id-point');
+                if (idPoint == Object.keys(mark)) {
+                    goToPoint(mark[Object.keys(mark)])
+                    selectedPointTitle.textContent =
+                    document.querySelector(`.points__item[data-id-point='${idPoint}']`)
+                    .querySelector('.points__item-title').textContent;
+                }
+            })
+            
+        });
+      })
+    
+      function goToPoint(coordinates) {
+        map.setCenter(coordinates, 15)
+      }
+  }
+
+  ymaps.ready(init);
+  
   // function setSwipper() {
   //   console.log("1");
   //   debugger;
