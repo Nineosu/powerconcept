@@ -2903,7 +2903,7 @@
 .map {
     .header__main {
         background: #32599E;
-        & p, a {
+        & p, .nav__link__a  {
             color: #fff;
         }
         .bl-calc {
