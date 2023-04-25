@@ -1,4 +1,4 @@
- "use strict";
+"use strict";
 window.onload = function () {
   let searchInput = document.querySelector(".header-search__bl");
   let searchValue = document.querySelector(".header-search__input");
@@ -274,6 +274,7 @@ window.onload = function () {
   let selectedPoint = document.querySelector('.selected__point');
   let backBtn = document.querySelector('.points__footer-link');
   let selectedPointTitle = document.querySelector('.selected__point .points__item-title');
+  let selectedPointText = document.querySelector('.selected__point .points__item-text')
   let pointsBody = document.querySelectorAll('.points__main');
   let openMenuBtns = document.querySelectorAll('.points__header-btn');
 
@@ -307,13 +308,18 @@ window.onload = function () {
       });
   });
 
-  let placemarks = [
-    {1: [43.13376883378631,131.9223052581915]},
-    {2: [56.8209452078883,60.602526027484025]},
-    {3: [55.791057181591654,49.112041211730954]},
-    {4: [56.323917424042506,43.93935723889158]}
-  ]
+    // Точки на карте
+  let placemarks = [];
+
+  mapButtons.forEach(item => {
+    let mark = {};
+    let strCoords = item.getAttribute('data-map-coords')?.split(',');
+    mark[item.getAttribute('data-id-point')] = strCoords ? [Number(strCoords[0]), Number(strCoords[1])] : null;
+    placemarks.push(mark);
+  });
+
   function init() {
+    // Создание центральной точки
     let map = new ymaps.Map('yandex-map', {
         center: [55.790236237572174,58.94949837657935],
         zoom: 6
@@ -322,7 +328,7 @@ window.onload = function () {
     placemarks.forEach(item => {
         let placemark = new ymaps.Placemark(item[Object.keys(item)], {}, {
             iconLayout: 'default#image',
-            iconImageHref: '../img/placemark__ico.svg',
+            iconImageHref: '../verstka/img/placemark__ico.svg',
             iconImageSize: [50, 60],
             iconImageOffset: [0, 0]
         });
@@ -356,21 +362,37 @@ window.onload = function () {
     })
 
     mapButtons.forEach(button => {
+        if (pointMenu.classList.contains('hidden')) {
+            button.classList.remove('list__item-hover');
+        }
+        
+
         button.addEventListener('click', () => {
-            pointMenu.classList.toggle('hidden');
-            selectedPoint.classList.toggle('hidden');
+            if (!pointMenu.classList.contains('hidden')) {
+                pointMenu.classList.toggle('hidden');
+                selectedPoint.classList.toggle('hidden');
+            }
+            
 
             placemarks.forEach(mark => {
                 let idPoint = button.getAttribute('data-id-point');
                 if (idPoint == Object.keys(mark)) {
+                try { 
                     goToPoint(mark[Object.keys(mark)])
+                } catch {
+                    console.error('Не заданы координаты')
+                }
+                selectedPointTitle.innerHTML =
+                document.querySelector(`.points__item[data-id-point='${idPoint}']`)
+                .querySelector('.points__item-title').innerHTML;
 
-                    selectedPointTitle.textContent =
-                    document.querySelector(`.points__item[data-id-point='${idPoint}']`)
-                    .querySelector('.points__item-title').textContent;
+                selectedPointText.innerHTML = 
+                document.querySelector(`.points__item[data-id-point='${idPoint}']`)
+                .querySelector('.points__item-text').innerHTML;
+                
 
-                    togglingMenu();
-                    togglingBtns(openMenuBtns);
+                togglingMenu();
+                togglingBtns(openMenuBtns);  
                 }
             })
             
