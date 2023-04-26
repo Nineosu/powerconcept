@@ -269,6 +269,53 @@ window.onload = function () {
       })
     })
   });
+
+  const modalType = document.querySelector('.modal__type'),
+        modalTypeContent = document.querySelectorAll('.modal__type-content'),
+        modalOutput = document.querySelector('.modal__output'),
+        modalOutputContent = document.querySelectorAll('.modal__output-content'),
+        modalCloseBtns = document.querySelectorAll('.table__modal-close'),
+        modalTypeOpen = document.querySelectorAll('.link__battery-type'),
+        modalOutputOpen = document.querySelectorAll('.link__output-type');
+
+    modalTypeOpen.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modalTypeContent.forEach(content => {
+                if (content.getAttribute('battery-type') == btn.getAttribute('battery-type')) {
+                    content.classList.add('table__modal-show');
+                }
+            });
+            modalType.classList.add('table__modal-show');
+        });
+    });
+
+    modalOutputOpen.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modalOutputContent.forEach(content => {
+                if (content.getAttribute('output-type') == btn.getAttribute('output-type')) {
+                    content.classList.add('table__modal-show');
+                }
+            });
+            modalOutput.classList.add('table__modal-show');
+        });
+    });
+
+    modalCloseBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (btn.classList.contains('type')) {
+                modalTypeContent.forEach(content => {
+                    content.classList.remove('table__modal-show');
+                });
+                modalType.classList.remove('table__modal-show');
+            } else if (btn.classList.contains('output')) {
+                modalOutputContent.forEach(content => {
+                    content.classList.remove('table__modal-show');
+                });
+                modalOutput.classList.remove('table__modal-show');
+            }
+        });
+    });
+
   let mapButtons = document.querySelectorAll('.points__item');
   let pointMenu = document.querySelector('.map__points');
   let selectedPoint = document.querySelector('.selected__point');
@@ -335,7 +382,6 @@ window.onload = function () {
 
         map.geoObjects.add(placemark);
     })
-    
 
     map.controls.remove('geolocationControl'); // удаляем геолокацию
     map.controls.remove('searchControl'); // удаляем поиск
@@ -403,8 +449,9 @@ window.onload = function () {
         map.setCenter(coordinates, 15)
       }
   }
-
-  ymaps.ready(init);
+  if (document.querySelector('#yandex-map')) {
+    ymaps.ready(init);
+  }
   
   // function setSwipper() {
   //   console.log("1");
