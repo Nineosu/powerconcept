@@ -20,7 +20,7 @@ window.onload = function () {
   let infoLinks = document.querySelectorAll('.list__item-link');
   let infoSub = document.querySelectorAll('.list__item-subblock');
   
-
+  /*
   searchInput.addEventListener("keydown", (e) => {
     if (searchValue.value > "") {
       searchBlock.classList.add("active");
@@ -28,6 +28,7 @@ window.onload = function () {
       searchBlock.classList.remove("active");
     }
   });
+  */
   BurgerBtns.forEach((e) => {
     e.addEventListener("click", (e) => {
       HeaderPopup.classList.toggle("active");
@@ -65,6 +66,7 @@ window.onload = function () {
   });
     
   });
+  /*
   searchLink.addEventListener("click", (e) => {
     if (searchValue.value > "") {
       pageSearch.classList.toggle("active");
@@ -79,6 +81,7 @@ window.onload = function () {
         .classList.toggle("active");
     }
   });
+  */
   document
     .querySelector(".header-search__close")
     .addEventListener("click", (e) => {
@@ -281,9 +284,9 @@ window.onload = function () {
     modalTypeOpen.forEach(btn => {
         btn.addEventListener('click', () => {
             modalTypeContent.forEach(content => {
-                if (content.getAttribute('battery-type') == btn.getAttribute('battery-type')) {
+                // if (content.getAttribute('battery-type') == btn.getAttribute('battery-type')) {
                     content.classList.add('table__modal-show');
-                }
+                // }
             });
             modalType.classList.add('table__modal-show');
         });
@@ -292,9 +295,9 @@ window.onload = function () {
     modalOutputOpen.forEach(btn => {
         btn.addEventListener('click', () => {
             modalOutputContent.forEach(content => {
-                if (content.getAttribute('output-type') == btn.getAttribute('output-type')) {
+                // if (content.getAttribute('output-type') == btn.getAttribute('output-type')) {
                     content.classList.add('table__modal-show');
-                }
+                // }
             });
             modalOutput.classList.add('table__modal-show');
         });
