@@ -6872,7 +6872,9 @@ textarea.modal__form-input {
 .map .header__main p, .map .header__main .nav__link__a {
   color: #fff;
 }
-.map .header__main .bl-calc {
+.map .header__main .bl-calc,
+.map .header__main .bl-nav__link__text-sm,
+.map .header__main .bl-nav__link__city {
   color: #32599E;
 }
 .map .main__bunner,
