@@ -128,31 +128,31 @@ window.onload = function () {
       },
     });
   }
-  if (document.querySelector(".gallery-top_2")) {
-    let galleryTop2 = new Swiper(".gallery-top_2", {
-      spaceBetween: 30,
-      loop: false,
-      loopedSlides: 5, //looped slides should be the same
+  if (document.querySelector(".gallery-top_2-slider")) {
+    let galleryTop2 = new Swiper(".gallery-top_2-slider", {
+      spaceBetween: 10,
+    //   loop: false,
+    //   loopedSlides: 5, //looped slides should be the same
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".mn-brands-next",
+        prevEl: ".mn-brands-prev",
       },
-      slidesPerView: 3,
-      observer: true,
-      observeParents: true,
-      observeSlideChildren: true,
+      slidesPerView: 'auto',
+    //   observer: true,
+    //   observeParents: true,
+    //   observeSlideChildren: true,
       // watchOverflow: true,
-      breakpoints: {
-        320: {
-          slidesPerView: 1.25,
-        },
-        700: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-      },
+    //   breakpoints: {
+    //     320: {
+    //       slidesPerView: 1.25,
+    //     },
+    //     700: {
+    //       slidesPerView: 2,
+    //     },
+    //     1024: {
+    //       slidesPerView: 3,
+    //     },
+    //   },
     });
   }
 
@@ -190,17 +190,17 @@ window.onload = function () {
     });
   }
   if (document.querySelector(".gallery-top_4")) {
-    let galleryTop4 = new Swiper(".gallery-top_4", {
+    let galleryTop4 = new Swiper(".products-slider", {
       spaceBetween: 10,
       loop: false,
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".products-slider-next",
+        prevEl: ".products-slider-prev",
       },
-      slidesPerView: 5,
-      observer: true,
-      observeParents: true,
-      observeSlideChildren: true,
+      slidesPerView: 4,
+    //   observer: true,
+    //   observeParents: true,
+    //   observeSlideChildren: true,
       // watchOverflow: true,
       // slidesPerColumn: 4,
 
@@ -209,7 +209,7 @@ window.onload = function () {
           slidesPerView: 2,
         },
         700: {
-          slidesPerView: 3,
+          slidesPerView: 3.5,
         },
         1024: {
           slidesPerView: 4,
@@ -243,6 +243,31 @@ window.onload = function () {
           slidesPerView: 4,
         },
       },
+    });
+  }
+  if (document.querySelector('.main__bunner-slider')) {
+    let mainBunner = new Swiper('.main__bunner-slider', {
+        spaceBetween: 10,
+        loop: false,
+        slidesPerView: 1,
+
+        pagination: {
+            el: '.main__bunner-pagination',
+            type: 'bullets',
+            clickable: true,
+        }
+      });
+  }
+  if (document.querySelector('.mn-news_slider')) {
+    let newsSlider = new Swiper('.mn-news_slider', {
+        spaceBetween: 10,
+        slidesPerView: 'auto',
+        loop: true,
+
+        scrollbar: {
+            el: '.mn-news-scrollbar',
+            draggable: true,
+        },
     });
   }
   subNavLinkItems.forEach(e => {
@@ -318,6 +343,28 @@ window.onload = function () {
             }
         });
     });
+
+    // Areas more
+   const areasMoreBtn = document.querySelector('.mn_areas-more'),
+         areasItems = document.querySelectorAll('.mn_areas__item');
+
+   areasMoreBtn.addEventListener('click', () => {
+        areasItems.forEach(item => {
+            item.classList.remove('mn_items-more');
+            areasMoreBtn.style.display = 'none';
+        });
+   });
+
+    // Clients more
+    const clientsMoreBtn = document.querySelector('.mn-client-more'),
+         clientsItems = document.querySelectorAll('.mn-client__item');
+
+   clientsMoreBtn.addEventListener('click', () => {
+        clientsItems.forEach(item => {
+            item.classList.remove('mn_items-more');
+            clientsMoreBtn.style.display = 'none';
+        });
+   });  
 
   let mapButtons = document.querySelectorAll('.points__item');
   let pointMenu = document.querySelector('.map__points');
