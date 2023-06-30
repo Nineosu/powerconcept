@@ -94,7 +94,8 @@
   object-fit: cover;
 }
 .main__bunner__img.p-products1__bunner-img {
-    width: 605px;
+    // width: 605px;
+    width: max-content;
     padding-top: 0;
 }
 .mn-products {

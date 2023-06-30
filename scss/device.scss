@@ -99,6 +99,22 @@
     .characteristics-btn {
         max-width: 302px;
     }
+    .accumulators-why .series-why__bl-img{
+        width: 408px;
+        height: 301px;
+    }
+    .p-accumulators .series-why__body {
+        gap: 20px;
+    }
+    .accumulators-why .series-why__bl-title {
+        font-size: 30px;
+        line-height: 21px;
+        margin-bottom: 10px;
+    }
+    .accumulators-why .series-why__bl-text_small {
+        font-size: 14px;
+        line-height: 16px;
+    }
 
   .calc__table {
     overflow: auto;
@@ -408,6 +424,59 @@
   .mn-products1__why__item__bl-img {
     height: 130px;
   }
+
+  .p-cards .p-products1__bunner-top-bl-img {
+    padding: 17px 35px;
+  }
+  .text_h1_p-cards {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .p-cards {
+    .main__bunner__bl-img {
+        left: -30%;
+    }
+    .p-products1__bunner__shadow_1 {
+        left: 10%;
+        background: rgba(255, 255, 255, .2);
+        border-radius: 0 0 0 280px;
+      }
+    .main__bunner__img.p-products1__bunner-img {
+        width: 85%;
+        border-radius: 0 0 0 350px;
+    }
+    .main__bunner__wrapper {
+        gap: 110px;
+    }
+    .products1__bunner__text {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .slider__card-logo {
+        width: 130px;
+        height: 52px;
+    }
+    .brands__slider-title {
+        font-size: 18px;
+        line-height: 21px;
+    }
+    .brands__slider-subtitle {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .brands__slider-card {
+        height: 260px;
+    }
+    .footer__link-text {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .slider-card__footer-link-ico {
+        width: 19px;
+        height: 19px;
+    }
+  }
+   
 }
 
 @media (max-width: 768px) {
@@ -642,6 +711,70 @@
     .characteristics-btn {
         margin-bottom: 40px;
     }
+
+    .p-cards {
+        .text_h1_p-cards {
+            font-size: 32px;
+            line-height: 38px;
+        }
+        .main__bunner__bl-img {
+            left: -70%;
+        }
+        .main__bunner__img.p-products1__bunner-img {
+            border-radius: 0 0 0 200px;
+        }
+        .p-products1__bunner__shadow_1 {
+            border-radius: 0 0 0 150px;
+        }
+        .p-products1__body {
+            padding-top: 100px;
+        }
+        .products1__bunner__text {
+            font-size: 12px;
+        }
+        .p-products1__body {
+            width: 65%;
+        }
+        .brands__slider-title {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        .brands__slider-subtitle {
+            font-size: 12px;
+            line-height: 14px;
+        }
+        .footer__link-text {
+            font-size: 12px;
+            line-height: 14px;
+        }
+        .slider-card__footer-link-ico {
+            width: 17px;
+            height: 17px;
+        }
+        .s-batteries__body {
+            padding-top: 30px;
+        }
+        .text_h2_s-batteries {
+            margin-bottom: 30px;
+        }
+    }
+
+    .accumulators-why {
+        .series-why__bl-img {
+            width: 295px;
+            height: 218px;
+        }
+        .series-why__bl-title {
+            font-size: 24px;
+            line-height: 21px;
+        }
+        .series-why__bl-text_small {
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+    }
+
 }
 
 @media (max-width: 700px) {
@@ -890,13 +1023,22 @@
         width: 85px;
         height: 35px;
     }
-    .swiper-button-prev.products-slider-prev,
-    .swiper-button-next.products-slider-next {
+    // .swiper-button-prev.products-slider-prev,
+    // .swiper-button-next.products-slider-next {
+    //     background-size: contain;
+    //     width: 50px !important;
+    //     top: 15.5% !important;
+    // }
+    .swiper-container .swiper-button-prev,
+    .swiper-container .swiper-button-next {
         background-size: contain;
         width: 50px !important;
         top: 15.5% !important;
     }
-    .swiper-button-prev.products-slider-prev {
+    // .swiper-button-prev.products-slider-prev {
+    //     left: 57%;
+    // }
+    .swiper-container .swiper-button-prev {
         left: 57%;
     }
     .text_h2_p-products1__s-why {
@@ -1470,11 +1612,79 @@
     .p-products1__body {
         padding-top: 60px;
       }
+    // .main__bunner__fon {
+    //   display: none;
+    // }
+    
     .main__bunner__fon {
-      display: none;
+        height: 119px;
+    }
+    .main__bunner__img.p-products1__bunner-img {
+        width: 100%;
+        padding-left: 0;
+        border-radius: 0 0 0 100px;
+    }
+    .main__bunner__bl-img {
+        left: 0;
+    }
+    .p-products1__bunner__shadow_1 {
+        left: 0;
+        border-radius: 0 0 0 80px;
     }
     .p-products1__bunner-top-bl-img {
-      margin: 0 -15px;
+        padding: 18px 16px;
+    }
+    .text_h1_p-cards {
+        font-size: 24px;
+        line-height: 28px;
+        width: min-content;
+    }
+    .p-products1__bunner-top-bl-img {
+        border-radius: 0 0 25px 25px;
+    }
+    .main__bunner__wrapper {
+        gap: 20px;
+    }
+    .p-products1__body {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .text_h4.products1__bunner__subtitle {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 10px;
+    }
+    .products1__bunner__text {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .mn-products__body {
+        padding: 35px 0;
+        gap: 30px;
+    }
+    .p-products1__s-why .swiper-container {
+        margin-bottom: 0;
+    }
+    .slider__card-logo {
+        width: 95px;
+        height: 38px;
+    }
+    .brands__slider-title {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .brands__slider-subtitle,
+    .footer__link-text {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .brands__slider-card {
+        height: 200px;
+        padding: 20px 20px 0 5px;
+    }
+    .text_h2_s-batteries {
+        font-size: 20px;
+        line-height: 24px;
     }
   }
   .series {
@@ -1683,6 +1893,28 @@
       }
     }
   }
+
+  .p-accumulators { 
+    .series-why__body {
+        display: flex;
+        flex-direction: column;
+    }
+    .series-why__bl-img {
+        width: 100%;
+        height: 129px;
+    }
+    .series-why_img {
+        border-radius: 13px;
+    }
+    .series-why {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+    .series-why__bl-title {
+        font-size: 18px;
+        line-height: 21px;
+    }
+  } 
   .p-news_item {
 
     .news__item-img {

@@ -166,18 +166,36 @@
 .p-products1__s-why .swiper-container {
     margin-bottom: 40px;
 }
-.swiper-button-next.products-slider-next {
+.brands-slider.swiper-container {
+    margin-bottom: 0;
+}
+// .swiper-button-next.products-slider-next {
+//     background: url('../img/product_slider-next.svg') no-repeat center;
+//     top: 10% !important;
+// }
+// .swiper-button-prev.products-slider-prev {
+//     background: url('../img/product_slider-next.svg') no-repeat center;
+//     transform: rotate(180deg);
+//     top: 10% !important;
+//     left: 80%;
+// }
+// .swiper-button-next.products-slider-next,
+// .swiper-button-prev.products-slider-prev {
+//     background-size: cover;
+//     width: 85px !important;
+// }
+.swiper-container .swiper-button-next {
     background: url('../img/product_slider-next.svg') no-repeat center;
     top: 10% !important;
 }
-.swiper-button-prev.products-slider-prev {
+.swiper-container .swiper-button-prev {
     background: url('../img/product_slider-next.svg') no-repeat center;
     transform: rotate(180deg);
     top: 10% !important;
     left: 80%;
 }
-.swiper-button-next.products-slider-next,
-.swiper-button-prev.products-slider-prev {
+.swiper-container .swiper-button-next,
+.swiper-container .swiper-button-prev {
     background-size: cover;
     width: 85px !important;
 }
@@ -195,6 +213,13 @@
 }
 .p-products1__why__next {
   background-image: url(../img/why-next.svg);
+}
+
+.p-cards {
+    // .swiper-container .swiper-button-next,
+    // .swiper-container .swiper-button-prev {
+    //     top: 15% !important;
+    // }
 }
 
 .why__site-block {
@@ -968,6 +993,7 @@
 .series-why__body {
   @include grid(max-content 1fr, 1fr);
   grid-gap: 60px;
+  align-items: center;
 } 
 .series-why__bl-text {
     color: #203569;
@@ -1094,13 +1120,13 @@
     margin-bottom: 20px;
 }
 .p-cards .mn-products__body {
-    padding-bottom: 0;
+    padding: 35px 0 80px;
 }
-.p-cards .swiper-button-next,.p-cards .swiper-button-prev {
-    top: 90% !important;
-}
+// .p-cards .swiper-button-next,.p-cards .swiper-button-prev {
+//     top: 90% !important;
+// }
 .p-cards .p-products1__body {
-  padding-top: 113px;
+  padding-top: 140px;
 }
 .p-cards .main__bunner__body {
   max-width: 510px;
@@ -1118,9 +1144,9 @@
 .s-batteries__items-table:not(:last-child) {
     margin-bottom: 45px;
 }
-.p-cards .batteries__title:not(nth-first-child) {
-    margin-top: 83px;
-}
+// .p-cards .batteries__title:not(nth-first-child) {
+//     margin-top: 83px;
+// }
 .p-cards__bl-info {
   position: relative;
 }
@@ -1137,13 +1163,21 @@
     padding: 30px 30px 0px 25px;
     height: 300px;
 }
+
+.p-cards {
+    .slider__card-logo {
+        width: 180px;
+        height: 72px;
+    }  
+}
+
 .slider__card-logo {
     margin-bottom: 10px;
 }
 .brands__slider-title {
     font-family: "MuseoSansCyrl500";
     font-weight: 400;
-    font-size: 21px;
+    font-size: 20px;
     line-height: 25px;
     width: 100%;
     margin-bottom: 16px;
@@ -1158,12 +1192,13 @@
 }
 
 .brands__slider-card-footer {
-    background: #bcc2d2;
+    background: rgba(255, 255, 255, .7);
     padding: 25px;
     border-radius: 0px 0px 10px 10px;
 }
 .slider-card__footer-link {
     display: flex;
+    justify-content: space-between;
 }
 .footer__link-text {
     font-family: "MuseoSansCyrl500";
@@ -1172,7 +1207,6 @@
     line-height: 19px;
     color: #203569;
     text-decoration-line: underline;
-    margin-right: 15px;
 }
 .filter__acb {
     display: flex;
@@ -1203,7 +1237,7 @@
     font-weight: 300;
     font-size: 36px;
     line-height: 21px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .p-cards__first-item {
   display: flex;
@@ -1302,7 +1336,7 @@
   display: flex;
 }
 .p-accumulators .text_h4.products1__bunner__subtitle {
-    font-weight: 600;
+    font-weight: 400;
 }
 .s-batteries_contact {
   background: #024b4d;
@@ -1451,7 +1485,8 @@
     font-weight: 600;
   }
   .main__bunner__img.p-products1__bunner-img {
-    width: 730px;
+    // width: 730px;
+    width: max-content;
     padding-left: 43px;
   }
   .p-products1__bunner__shadow_1 {

@@ -2229,7 +2229,9 @@ body.active {
 }
 
 .main__bunner__img.p-products1__bunner-img {
-  width: 605px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   padding-top: 0;
 }
 
@@ -3365,12 +3367,16 @@ textarea.modal__form-input {
   margin-bottom: 40px;
 }
 
-.swiper-button-next.products-slider-next {
+.brands-slider.swiper-container {
+  margin-bottom: 0;
+}
+
+.swiper-container .swiper-button-next {
   background: url("../img/product_slider-next.svg") no-repeat center;
   top: 10% !important;
 }
 
-.swiper-button-prev.products-slider-prev {
+.swiper-container .swiper-button-prev {
   background: url("../img/product_slider-next.svg") no-repeat center;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -3378,8 +3384,8 @@ textarea.modal__form-input {
   left: 80%;
 }
 
-.swiper-button-next.products-slider-next,
-.swiper-button-prev.products-slider-prev {
+.swiper-container .swiper-button-next,
+.swiper-container .swiper-button-prev {
   background-size: cover;
   width: 85px !important;
 }
@@ -4349,6 +4355,9 @@ textarea.modal__form-input {
   -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
   grid-gap: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .series-why__body > *:nth-child(1) {
@@ -4495,15 +4504,11 @@ textarea.modal__form-input {
 }
 
 .p-cards .mn-products__body {
-  padding-bottom: 0;
-}
-
-.p-cards .swiper-button-next, .p-cards .swiper-button-prev {
-  top: 90% !important;
+  padding: 35px 0 80px;
 }
 
 .p-cards .p-products1__body {
-  padding-top: 113px;
+  padding-top: 140px;
 }
 
 .p-cards .main__bunner__body {
@@ -4528,10 +4533,6 @@ textarea.modal__form-input {
   margin-bottom: 45px;
 }
 
-.p-cards .batteries__title:not(nth-first-child) {
-  margin-top: 83px;
-}
-
 .p-cards__bl-info {
   position: relative;
 }
@@ -4552,6 +4553,11 @@ textarea.modal__form-input {
   height: 300px;
 }
 
+.p-cards .slider__card-logo {
+  width: 180px;
+  height: 72px;
+}
+
 .slider__card-logo {
   margin-bottom: 10px;
 }
@@ -4559,7 +4565,7 @@ textarea.modal__form-input {
 .brands__slider-title {
   font-family: "MuseoSansCyrl500";
   font-weight: 400;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 25px;
   width: 100%;
   margin-bottom: 16px;
@@ -4575,7 +4581,7 @@ textarea.modal__form-input {
 }
 
 .brands__slider-card-footer {
-  background: #bcc2d2;
+  background: rgba(255, 255, 255, 0.7);
   padding: 25px;
   border-radius: 0px 0px 10px 10px;
 }
@@ -4584,6 +4590,9 @@ textarea.modal__form-input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer__link-text {
@@ -4593,7 +4602,6 @@ textarea.modal__form-input {
   line-height: 19px;
   color: #203569;
   text-decoration-line: underline;
-  margin-right: 15px;
 }
 
 .filter__acb {
@@ -4631,7 +4639,7 @@ textarea.modal__form-input {
   font-weight: 300;
   font-size: 36px;
   line-height: 21px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .p-cards__first-item {
@@ -4772,7 +4780,7 @@ textarea.modal__form-input {
 }
 
 .p-accumulators .text_h4.products1__bunner__subtitle {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .s-batteries_contact {
@@ -4980,7 +4988,9 @@ textarea.modal__form-input {
   font-weight: 600;
 }
 .company .main__bunner__img.p-products1__bunner-img {
-  width: 730px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   padding-left: 43px;
 }
 .company .p-products1__bunner__shadow_1 {
@@ -7568,6 +7578,22 @@ textarea.modal__form-input {
   .characteristics-btn {
     max-width: 302px;
   }
+  .accumulators-why .series-why__bl-img {
+    width: 408px;
+    height: 301px;
+  }
+  .p-accumulators .series-why__body {
+    gap: 20px;
+  }
+  .accumulators-why .series-why__bl-title {
+    font-size: 30px;
+    line-height: 21px;
+    margin-bottom: 10px;
+  }
+  .accumulators-why .series-why__bl-text_small {
+    font-size: 14px;
+    line-height: 16px;
+  }
   .calc__table {
     overflow: auto;
   }
@@ -7924,6 +7950,55 @@ textarea.modal__form-input {
   .mn-products1__why__item__bl-img {
     height: 130px;
   }
+  .p-cards .p-products1__bunner-top-bl-img {
+    padding: 17px 35px;
+  }
+  .text_h1_p-cards {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .p-cards .main__bunner__bl-img {
+    left: -30%;
+  }
+  .p-cards .p-products1__bunner__shadow_1 {
+    left: 10%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 0 280px;
+  }
+  .p-cards .main__bunner__img.p-products1__bunner-img {
+    width: 85%;
+    border-radius: 0 0 0 350px;
+  }
+  .p-cards .main__bunner__wrapper {
+    gap: 110px;
+  }
+  .p-cards .products1__bunner__text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .p-cards .slider__card-logo {
+    width: 130px;
+    height: 52px;
+  }
+  .p-cards .brands__slider-title {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .p-cards .brands__slider-subtitle {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .p-cards .brands__slider-card {
+    height: 260px;
+  }
+  .p-cards .footer__link-text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .p-cards .slider-card__footer-link-ico {
+    width: 19px;
+    height: 19px;
+  }
 }
 @media (max-width: 768px) {
   .header__bl-city {
@@ -8167,6 +8242,62 @@ textarea.modal__form-input {
   }
   .characteristics-btn {
     margin-bottom: 40px;
+  }
+  .p-cards .text_h1_p-cards {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .p-cards .main__bunner__bl-img {
+    left: -70%;
+  }
+  .p-cards .main__bunner__img.p-products1__bunner-img {
+    border-radius: 0 0 0 200px;
+  }
+  .p-cards .p-products1__bunner__shadow_1 {
+    border-radius: 0 0 0 150px;
+  }
+  .p-cards .p-products1__body {
+    padding-top: 100px;
+  }
+  .p-cards .products1__bunner__text {
+    font-size: 12px;
+  }
+  .p-cards .p-products1__body {
+    width: 65%;
+  }
+  .p-cards .brands__slider-title {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .p-cards .brands__slider-subtitle {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .p-cards .footer__link-text {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .p-cards .slider-card__footer-link-ico {
+    width: 17px;
+    height: 17px;
+  }
+  .p-cards .s-batteries__body {
+    padding-top: 30px;
+  }
+  .p-cards .text_h2_s-batteries {
+    margin-bottom: 30px;
+  }
+  .accumulators-why .series-why__bl-img {
+    width: 295px;
+    height: 218px;
+  }
+  .accumulators-why .series-why__bl-title {
+    font-size: 24px;
+    line-height: 21px;
+  }
+  .accumulators-why .series-why__bl-text_small {
+    font-size: 12px;
+    line-height: 14px;
   }
 }
 @media (max-width: 700px) {
@@ -8428,13 +8559,13 @@ textarea.modal__form-input {
     width: 85px;
     height: 35px;
   }
-  .swiper-button-prev.products-slider-prev,
-  .swiper-button-next.products-slider-next {
+  .swiper-container .swiper-button-prev,
+  .swiper-container .swiper-button-next {
     background-size: contain;
     width: 50px !important;
     top: 15.5% !important;
   }
-  .swiper-button-prev.products-slider-prev {
+  .swiper-container .swiper-button-prev {
     left: 57%;
   }
   .text_h2_p-products1__s-why {
@@ -9033,10 +9164,76 @@ textarea.modal__form-input {
     padding-top: 60px;
   }
   .p-cards .main__bunner__fon {
-    display: none;
+    height: 119px;
+  }
+  .p-cards .main__bunner__img.p-products1__bunner-img {
+    width: 100%;
+    padding-left: 0;
+    border-radius: 0 0 0 100px;
+  }
+  .p-cards .main__bunner__bl-img {
+    left: 0;
+  }
+  .p-cards .p-products1__bunner__shadow_1 {
+    left: 0;
+    border-radius: 0 0 0 80px;
   }
   .p-cards .p-products1__bunner-top-bl-img {
-    margin: 0 -15px;
+    padding: 18px 16px;
+  }
+  .p-cards .text_h1_p-cards {
+    font-size: 24px;
+    line-height: 28px;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+  .p-cards .p-products1__bunner-top-bl-img {
+    border-radius: 0 0 25px 25px;
+  }
+  .p-cards .main__bunner__wrapper {
+    gap: 20px;
+  }
+  .p-cards .p-products1__body {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  .p-cards .text_h4.products1__bunner__subtitle {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+  .p-cards .products1__bunner__text {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .p-cards .mn-products__body {
+    padding: 35px 0;
+    gap: 30px;
+  }
+  .p-cards .p-products1__s-why .swiper-container {
+    margin-bottom: 0;
+  }
+  .p-cards .slider__card-logo {
+    width: 95px;
+    height: 38px;
+  }
+  .p-cards .brands__slider-title {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .p-cards .brands__slider-subtitle,
+  .p-cards .footer__link-text {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .p-cards .brands__slider-card {
+    height: 200px;
+    padding: 20px 20px 0 5px;
+  }
+  .p-cards .text_h2_s-batteries {
+    font-size: 20px;
+    line-height: 24px;
   }
   .series .main__bunner__wrapper {
     position: relative;
@@ -9213,6 +9410,30 @@ textarea.modal__form-input {
   }
   .p-news .mn-news__item .mn-news__bl-img {
     display: none;
+  }
+  .p-accumulators .series-why__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .p-accumulators .series-why__bl-img {
+    width: 100%;
+    height: 129px;
+  }
+  .p-accumulators .series-why_img {
+    border-radius: 13px;
+  }
+  .p-accumulators .series-why {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+  .p-accumulators .series-why__bl-title {
+    font-size: 18px;
+    line-height: 21px;
   }
   .p-news_item .news__item-img {
     width: 100%;

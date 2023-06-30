@@ -217,6 +217,34 @@ window.onload = function () {
       },
     });
   }
+  if (document.querySelector(".brands-slider")) {
+    let galleryTop4 = new Swiper(".brands-slider", {
+      spaceBetween: 25,
+      loop: false,
+      navigation: {
+        nextEl: ".brands-slider-next",
+        prevEl: ".brands-slider-prev",
+      },
+      slidesPerView: 4,
+    //   observer: true,
+    //   observeParents: true,
+    //   observeSlideChildren: true,
+      // watchOverflow: true,
+      // slidesPerColumn: 4,
+
+      breakpoints: {
+        320: {
+          slidesPerView: 1.5,
+        },
+        700: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  }
   if (document.querySelector(".products-sw")) {
     let productsSw = new Swiper(".products-sw", {
       spaceBetween: 25,
