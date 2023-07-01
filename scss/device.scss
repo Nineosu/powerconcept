@@ -294,17 +294,29 @@
     bottom: 5%;
   }
   .p-cards.p-nutrition {
-    .text_h1 {
-        font-size: 32px;
+    // .text_h1 {
+    //     font-size: 32px;
+    // }
+    .main__bunner__img.p-products1__bunner-img {
+        width: 183px;
+        height: 177px;
+        padding-left: 350px;
+        padding-top: 100px;
+    }
+    .text_h4.products1__bunner__subtitle {
+        font-size: 18px;
+        line-height: 21px;
     }
     .p-products1__bunner__shadow_1 {
-        left: 15%;
+        left: 30%;
+        background: #62DDB1;
     }
     .main__bunner__bl-img.p-products1__bl-bunner:after {
-        width: 80%;
+        width: 60%;
     }
     .main__bunner__body.p-products1__body {
-        padding-top: 80px;
+        padding-top: 110px;
+        padding-bottom: 130px;
         max-width: 550px;
     }
     .main__bunner__wrapper {
@@ -382,6 +394,19 @@
     }
   }
 
+    .page.battary_contact, 
+    .page.us-battery,
+    .page.battery_stark {
+        .main__bunner__wrapper {
+            grid-gap: 320px;
+        }
+        .p-products1__bunner__mini-bl-img {
+            left: -50%;
+        }
+        .p-products1__bunner__mini-bl-img {
+            left: -45%;
+          }
+    }
   .p-products1__bunner__mini-bl-img {
     width: 350px;
   }
@@ -410,9 +435,6 @@
   .product .products1__bunner__subtitle,
   .products1__bunner__text {
     width: 100%;
-  }
-  .p-products1__bunner__mini-bl-img {
-    left: -45%;
   }
   .swiper-button-prev.products-slider-prev {
     left: 75%
@@ -775,6 +797,37 @@
 
     }
 
+    .p-cards.p-nutrition {
+        .main__bunner__body.p-products1__body {
+            max-width: 480px;
+            width: 100%;
+        }
+        .main__bunner__wrapper {
+            gap: 200px;
+        }
+        .p-products1__bunner__shadow_1 {
+            border-radius: 0 0 0 250px;
+        }
+        .main__bunner__img.p-products1__bunner-img {
+            width: 145px;
+            height: 140px;
+            padding-left: 260px;
+        }
+    }
+
+    .page.battary_contact, 
+    .page.us-battery,
+    .page.battery_stark {
+        .main__bunner__body {
+            max-width: 310px;
+        }
+        .p-products1__bunner__mini-bl-img {
+            left: -65%;
+        }
+    }
+    .p-products1__why-text {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -1500,7 +1553,10 @@
     width: 130px;
     height: 53px;
   }
-  .product {
+  .product,
+  .page.battary_contact, 
+  .page.us-battery,
+  .page.battery_stark {
     .p-products1__bunner-top {
       position: absolute;
       top: 0;
@@ -1894,7 +1950,38 @@
     }
   }
 
-  .p-accumulators { 
+  .p-cards.p-nutrition {
+    .mn-products {
+        padding-top: 0;
+    }
+
+    .main__bunner__wrapper {
+        gap: 10px;
+    }
+    .main__bunner__body.p-products1__body {
+        padding-top: 60px;
+        padding-bottom: 90px;
+    }
+    .text_h4.products1__bunner__subtitle {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .p-products1__bunner-top-bl-img {
+        padding: 13px;
+    }
+    .p-products1__bunner__shadow_1 {
+        left: 0;
+    }
+    .main__bunner__bl-img.p-products1__bl-bunner:after {
+        width: 97%;
+    }
+    .main__bunner__img.p-products1__bunner-img {
+        padding-top: 10px;
+        width: 47px;
+        height: 42px;
+    }
+  }
+  .accumulators-why { 
     .series-why__body {
         display: flex;
         flex-direction: column;
@@ -2102,4 +2189,17 @@
         padding-bottom: 5px
     }
   }
+  .page.battary_contact, 
+    .page.us-battery,
+    .page.battery_stark {
+        .main__bunner__wrapper {
+            gap: 30px;
+        }
+        .products1__bunner__subtitle {
+            padding-top: 70px;
+        }
+    }
+    .p-products1__why-text {
+        font-size: 14px;
+    }
 } ;

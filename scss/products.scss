@@ -1,3 +1,8 @@
+.product {
+    .main__bunner.p-products1__bunner .main__bunner__wrapper {
+        grid-gap: 333px;
+    }
+} 
 .p-products1__bunner-img {
   border-radius: 0px 0px 0px 250px;
 }
@@ -196,6 +201,7 @@
 }
 .swiper-container .swiper-button-next,
 .swiper-container .swiper-button-prev {
+    user-select: none;
     background-size: cover;
     width: 85px !important;
 }
@@ -271,9 +277,20 @@
 .rectangle_s-batteries::after {
   background: #203569
 }
+.p-nutrition { 
+    .rectangle_s-batteries::after,
+    .s-batteries .rectangle::before,
+    .batteries__title,
+    .s-batteries__button {
+        background: #32599E;
+    }
+}
 .text_h2_s-batteries {
   color: #203569;
   margin-bottom: 45px;
+}
+.p-nutrition .text_h2_s-batteries {
+    color: #32599E;
 }
 .batteries__title {
     background: #203569;
@@ -479,6 +496,12 @@
 }
 .text_h2_p-products1__s-why {
   color: #4bbe95;
+}
+.p-products1__why-text {
+    color: #203569;
+}
+.products1__bunner__subtitle {
+    margin-bottom: 10px;
 }
 
 .product .products1__bunner__subtitle {
@@ -700,13 +723,19 @@
     .p-products1__s-why .s-areas__footer__link {
         text-decoration: underline;
     }
-    .rectangle::before {
+    // .rectangle::before {
+    //     display: none;
+    // }
+    .rectangle_characteristics::before {
         display: none;
     }
     .rectangle::after {
         top: -1px;
     }
     .text_h2_p-products1__s-why {
+        color: #4BBE95;
+    }
+    .characteristics .text_h2_p-products1__s-why {
         color: #024B4D;
     }
 }
@@ -1107,7 +1136,7 @@
   left: 0;
   width: auto;
   z-index: 4;
-  background: #203569;
+  background: #32599E;
   color: $colorWhite;
   border-radius: 0px 0px 50px 50px;
   padding: 27px 39px;
@@ -1276,7 +1305,7 @@
   justify-content: space-between;
 }
 .p-cards .s-batteries__body {
-  padding-top: 75px;
+  padding-top: 40px;
 }
 .p-cards__item {
   position: relative;
@@ -2929,21 +2958,25 @@
         border-top: 5px solid #62ddb1;
     }
     .main__bunner__img {
+        object-fit: contain;
         border-radius: 0;
     }
     .p-products1__bunner-img {
         width: 291px;
-        padding-top: 90px;
-        padding-left: 250px;
+        padding-top: 30px;
+        padding-left: 200px;
         height: auto;
     }
     .p-products1__bunner__shadow_1 {
         background: #62DDB1;
     }
+    .main__bunner__body {
+        max-width: 710px;
+    }
     .text_h4.products1__bunner__subtitle {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 19px;
+        font-weight: 400;
+        font-size: 21px;
+        line-height: 25px;
         color: #32599E;
         margin-bottom: 10px;
     }
@@ -2959,13 +2992,13 @@
         height: 100%;
         z-index: 2;
         border-radius: 0px 0px 0px 250px;
-        background: #cff
+        background: rgba(204, 255, 255, .7)
     }
     .mn-products.p-products1__s-why.brands {
         background: #32599E;
     }
     .mn-products {
-        padding-top: 90px;
+        padding-top: 33px;
     }
     .mn-products.p-products1__s-why.brands {
         padding-top: 0;
@@ -2996,17 +3029,18 @@
     .series-why__body {
         grid-gap: 22px;
     }
-    .text_h2_s-batteries {
-        margin-bottom: 0;
-    }
+    // .text_h2_s-batteries {
+    //     margin-bottom: 0;
+    // }
 }
 .nutrition-1 {
     .main__bunner__img {
         width: 257px;
         height: 250px;
-        padding-top: 40px;
-        padding-left: 350px;
+        padding-top: 30px;
+        padding-left: 200px;
     }
+
 }
 
 .nutrition-2 {
@@ -3021,12 +3055,12 @@
 }
 
 .nutrition-3 {
-    .p-products1__bunner-img {
-        width: 291px;
-        height: 219px;
-        padding-top: 90px;
-        padding-left: 250px;
-    }
+    // .p-products1__bunner-img {
+    //     width: 291px;
+    //     height: 219px;
+    //     padding-top: 90px;
+    //     padding-left: 250px;
+    // }
     .text.products1__bunner__text {
         margin-bottom: 33px;
     }
@@ -3036,35 +3070,35 @@
     .p-products1__body {
         max-width: 590px;
     }
-    .p-products1__bunner-img {
-        width: 291px;
-        height: 285px;
-        padding-top: 50px;
-        padding-left: 250px;
-    }
+    // .p-products1__bunner-img {
+    //     width: 291px;
+    //     height: 285px;
+    //     padding-top: 50px;
+    //     padding-left: 250px;
+    // }
     h3.series-why__bl-text_big {
         font-size: 36px;
         line-height: 21px;  
         margin-bottom: 46px;
     }
-    .mn-products.p-products1__s-why {
-        padding-bottom: 124px;
-    }
+    // .mn-products.p-products1__s-why {
+    //     padding-bottom: 124px;
+    // }
 }
 
 .nutrition-5 {
-    .p-products1__bunner-top-bl-img {
-        width: 1034px;
-    }
-    .p-products1__bunner-img {
-        width: 214px;
-        height: 197px;
-        padding-top: 140px;
-        padding-left: 380px;
-    }
-    .mn-products.p-products1__s-why {
-        padding-bottom: 124px;
-    }
+    // .p-products1__bunner-top-bl-img {
+    //     width: 1034px;
+    // }
+    // .p-products1__bunner-img {
+    //     width: 214px;
+    //     height: 197px;
+    //     padding-top: 140px;
+    //     padding-left: 380px;
+    // }
+    // .mn-products.p-products1__s-why {
+    //     padding-bottom: 124px;
+    // }
 }
 
 .map {
