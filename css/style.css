@@ -7548,6 +7548,45 @@ textarea.modal__form-input {
   text-decoration: underline;
 }
 
+/* feedback page */
+
+.feedback {
+    position: relative;
+    background: url('../img/modal-form.png') no-repeat center;
+    background-size: cover;
+    padding: 140px 0;
+
+    font-family: "MuseoSansCyrl500";
+}
+
+.feedback {
+    border-top: 8px solid #32599E;
+}
+
+.feedback__notification {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
+
+    margin-bottom: 25px;
+}
+
+.feedback .form__modal-main {
+    padding: 0;
+}
+
+.feedback .modal__form-submit {
+    position: unset;
+    width: max-content;
+    margin-left: auto;
+}
+
+.feedback .modal__form-other {
+    margin-bottom: 40px;
+}
+
+/* feedback page end */
+
 /* 404 page */
 
 .page-404__main {
@@ -8146,6 +8185,25 @@ textarea.modal__form-input {
     width: 19px;
     height: 19px;
   }
+  .page-404__wrapper {
+    gap: 50px;
+  }
+  .page-404__subtitle {
+    font-size: 38px;
+  }
+  .page-404__title {
+    font-size: 180px;
+    line-height: 200px;
+  }
+  .page-404__desc-title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .page-404__desc-subtitle,
+  .page-404__desc-link {
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
 @media (max-width: 768px) {
   .header__bl-city {
@@ -8475,6 +8533,14 @@ textarea.modal__form-input {
   }
   .p-products1__why-text {
     font-size: 16px;
+  }
+  .page-404__wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .page-404__title {
+    font-size: 150px;
+    line-height: 180px;
   }
 }
 @media (max-width: 700px) {
@@ -9885,6 +9951,9 @@ textarea.modal__form-input {
   .modal__form-submit {
     bottom: 2%;
     padding: 10px 70px;
+  }
+  .feedback .modal__form-submit {
+    transform: translateX(0);
   }
   .map .pm-700 {
     display: none;
