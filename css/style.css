@@ -8559,10 +8559,16 @@ textarea.modal__form-input {
   }
   .main__bunner__body {
     max-width: 100%;
-    margin-top: -45px;
+    /* margin-top: -45px; */
+  }
+  .main__bunner-slide {
+    flex-direction: column;
+  }
+  .main__bunner__fon {
+    margin-bottom: 100px;
   }
   .main__bunner__bl-button {
-    margin: 20px auto 0;
+    /* margin: 20px auto 0; */
   }
   .main__bunner__button {
     padding: 12px 90px 12px 25px;
