@@ -32,11 +32,13 @@ window.onload = function () {
 
   const navBurger = document.querySelector('#nav-burger');
 
-  navBurger.addEventListener('click', () => {
-    navBurger.classList.toggle('open'); 
-    HeaderPopup.classList.toggle("active");
-    body.classList.toggle("active");
-  });
+  if (navBurger) {
+    navBurger.addEventListener('click', () => {
+        navBurger.classList.toggle('open'); 
+        HeaderPopup.classList.toggle("active");
+        body.classList.toggle("active");
+      });
+  }
 
 //   BurgerBtns.forEach((e) => {
 //     e.addEventListener("click", (e) => {

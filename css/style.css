@@ -539,6 +539,7 @@ a {
 }
 
 .header__bl-city {
+    z-index: 2;
   padding-bottom: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1097,6 +1098,7 @@ a {
   display: inline;
 }
 .bl-city ul.list {
+    width: max-content;
   counter-reset: labels;
 }
 .bl-city label {
@@ -2243,6 +2245,7 @@ body.active {
 .main__bunner-slider {
     position: relative;
   max-width: 100vw;
+  max-height: 450px;
   height: 100%;
 }
 
@@ -3461,6 +3464,10 @@ textarea.modal__form-input {
   width: 85px !important;
 }
 
+.swiper-container .swiper-button-disabled {
+    display: none;
+}
+
 .p-products1__why__back,
 .p-products1__why__next {
   display: inline-block;
@@ -4186,8 +4193,8 @@ textarea.modal__form-input {
 .series__items {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr 15px 1fr 15px 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr 15px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 15px;
 }
 
@@ -4489,23 +4496,28 @@ textarea.modal__form-input {
 
 .modal__type,
 .modal__output {
-  position: absolute;
-  top: 15%;
-  left: 10%;
-  max-width: 400px;
-  max-height: 600px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  padding: 20px 35px;
+  height: 100%;
   background: #fff;
   -webkit-box-shadow: 4px 4px 20px rgba(61, 99, 162, 0.5);
           box-shadow: 4px 4px 20px rgba(61, 99, 162, 0.5);
-  z-index: 2;
-  border-radius: 30px;
+  z-index: 10;
   display: none;
 }
 
 .modal__type-content,
 .modal__output-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 100%;
   display: none;
 }
 
@@ -4529,6 +4541,7 @@ textarea.modal__form-input {
   line-height: 30px;
   color: #203569;
   margin-bottom: 25px;
+  text-align: center;
 }
 
 .modal__type-img {
@@ -7694,6 +7707,7 @@ textarea.modal__form-input {
     font-size: 18px;
   }
   .main__bunner__text {
+    max-width: 90%;
     font-size: 14px;
   }
   .main__bunner__button {
@@ -8552,10 +8566,14 @@ textarea.modal__form-input {
     grid-gap: 50px;
   }
   .swiper-pagination.main__bunner-pagination {
-    position: relative;
+    /* position: relative; */
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+
+    position: absolute;
+    top: 37%;
+    height: max-content;
   }
   .main__bunner__body {
     max-width: 100%;
@@ -10005,6 +10023,9 @@ textarea.modal__form-input {
   }
 }
 @media (max-width: 700px){
+    .main__bunner-slider {
+        overflow-x: visible;
+    }
   .s-batteries__item-brand {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
