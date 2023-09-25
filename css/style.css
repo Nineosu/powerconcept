@@ -2394,6 +2394,7 @@ body.active {
 
 .text_h4_mn-products {
   color: var(--pct-navy-2, #32599E);
+  height: 50px;
   margin-bottom: 12px;
 }
 
