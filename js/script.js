@@ -30,14 +30,18 @@ window.onload = function () {
   });
   */
 
-  const navBurger = document.querySelector('#nav-burger');
+  const navBurgers = document.querySelectorAll('.nav-burger'),
+        headerBurger = document.querySelector('.header-burger');
 
-  if (navBurger) {
-    navBurger.addEventListener('click', () => {
-        navBurger.classList.toggle('open'); 
-        HeaderPopup.classList.toggle("active");
-        body.classList.toggle("active");
-      });
+  if (navBurgers) {
+    navBurgers.forEach(burger => {
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('open');
+            headerBurger.classList.toggle('burger-hidden'); 
+            HeaderPopup.classList.toggle("active");
+            body.classList.toggle("active");
+          });
+    });
   }
 
 //   BurgerBtns.forEach((e) => {
