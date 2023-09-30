@@ -472,9 +472,8 @@
                     <input type="text" class="points__header-input" placeholder="Все города">
                     <button class="points__header-input-btn"></button>
                 </div>
-                <button class="points__header-btn points__header-more-btn"></button>
             </div>
-            <div class="points__main pm-700">
+            <div class="points__main">
                 <ul class="points__items">
                     <li data-id-point="1" class="points__item" data-map-coords>
                         <p class="points__item-title">Владивосток</p>
@@ -522,14 +521,27 @@
                     </li>
                 </ul>
             </div>
+            <div class="points__main points-more selected__point hidden">
+                <div data-id-point="" class="points__item">
+                    <p class="points__item-title">Владивосток</p>
+                    <p class="points__item-text">
+                        Улица такая-то, 33/6, 380 <br /> <br />
+                        Тел./факс: +7 (423) 239 3075 <br />
+                        E-mail: <a href="#!" class="item__text-link">DV@powerconcept.ru</a>
+                    </p>
+                </div>
+            </div>
+            <div class="points__footer points-more hidden">
+                <a href="#!" class="points__footer-link">← Назад к списку</a>
+            </div>
+
         </div>
-        <div class="map__points selected__point hidden">
+        <!-- <div class="map__points selected__point hidden">
             <div class="points__header">
                 <div class="header__input">
                     <input type="text" class="points__header-input" placeholder="Все города">
                     <button class="points__header-input-btn"></button>
                 </div>
-                <button class="points__header-btn points__header-more-btn"></button>
             </div>
             <div class="points__main pm-700">
                 <div data-id-point="" class="points__item">
@@ -544,7 +556,7 @@
             <div class="points__footer">
                 <a href="#!" class="points__footer-link">← Назад к списку</a>
             </div>
-        </div>
+        </div> -->
         <div id="yandex-map" style="width: 100%; height: 724px"></div>
       </div>
       <div class="page-search">

@@ -419,39 +419,48 @@ window.onload = function () {
 
   let mapButtons = document.querySelectorAll('.points__item');
   let pointMenu = document.querySelector('.map__points');
+  let pointsMore = document.querySelectorAll('.points-more');
   let selectedPoint = document.querySelector('.selected__point');
   let backBtn = document.querySelector('.points__footer-link');
   let selectedPointTitle = document.querySelector('.selected__point .points__item-title');
   let selectedPointText = document.querySelector('.selected__point .points__item-text')
-  let pointsBody = document.querySelectorAll('.points__main');
+  let pointsBody = document.querySelector('.points__main');
   let openMenuBtns = document.querySelectorAll('.points__header-btn');
 
 
-  function togglingMenu() {
-    pointsBody.forEach(menu => {
-        if (menu.classList.contains('pm-700')) {
-            menu.classList.remove('pm-700');
-        } else {
-            menu.classList.add('pm-700');
-        }
-    });
-  }
+//   function togglingMenu() {
+//     pointsBody.forEach(menu => {
+//         if (menu.classList.contains('pm-700')) {
+//             menu.classList.remove('pm-700');
+//         } else {
+//             menu.classList.add('pm-700');
+//         }
+//     });
+//   }
 
-  function togglingBtns(btns) {
-    btns.forEach(btn => {
-        if (btn.classList.contains('points__header-more-btn')) {
-            btn.classList.remove('points__header-more-btn');
-            btn.classList.add('points__header-less-btn');
-        } else {
-            btn.classList.remove('points__header-less-btn');
-            btn.classList.add('points__header-more-btn');
-        }
-    })
-  }
+
+function togglingMenu() {
+    pointsMore.forEach(item => {
+        item.classList.toggle('hidden');
+    });
+    pointsBody.classList.toggle('hidden');
+}
+
+//   function togglingBtns(btns) {
+//     btns.forEach(btn => {
+//         if (btn.classList.contains('points__header-more-btn')) {
+//             btn.classList.remove('points__header-more-btn');
+//             btn.classList.add('points__header-less-btn');
+//         } else {
+//             btn.classList.remove('points__header-less-btn');
+//             btn.classList.add('points__header-more-btn');
+//         }
+//     })
+//   }
 
   openMenuBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        togglingBtns(openMenuBtns);
+        // togglingBtns(openMenuBtns);
         togglingMenu();
       });
   });
@@ -495,17 +504,21 @@ window.onload = function () {
     
 
     backBtn.addEventListener('click', () => {
-        pointMenu.classList.toggle('hidden');
-        selectedPoint.classList.toggle('hidden');
-        pointsBody.forEach(body => {
-            if (body.classList.contains('pm-700')) {
-                body.classList.remove('pm-700')
-                openMenuBtns.forEach(btn => {
-                    btn.classList.remove('points__header-more-btn');
-                    btn.classList.add('points__header-less-btn');
-                })
-            }
-        })
+        // pointMenu.classList.toggle('hidden');
+        // pointsMore.forEach(item => {
+        //     item.classList.toggle('hidden');
+        // });
+        togglingMenu()
+        // selectedPoint.classList.toggle('hidden');
+        // pointsBody.forEach(body => {
+        //     if (body.classList.contains('pm-700')) {
+        //         body.classList.remove('pm-700')
+        //         openMenuBtns.forEach(btn => {
+        //             btn.classList.remove('points__header-more-btn');
+        //             btn.classList.add('points__header-less-btn');
+        //         })
+        //     }
+        // })
     })
 
     mapButtons.forEach(button => {
@@ -515,10 +528,10 @@ window.onload = function () {
         
 
         button.addEventListener('click', () => {
-            if (!pointMenu.classList.contains('hidden')) {
-                pointMenu.classList.toggle('hidden');
-                selectedPoint.classList.toggle('hidden');
-            }
+            // if (!pointMenu.classList.contains('hidden')) {
+            //     pointMenu.classList.toggle('hidden');
+            //     selectedPoint.classList.toggle('hidden');
+            // }
             
 
             placemarks.forEach(mark => {
@@ -539,7 +552,7 @@ window.onload = function () {
                 
 
                 togglingMenu();
-                togglingBtns(openMenuBtns);  
+                // togglingBtns(openMenuBtns);  
                 }
             })
             
