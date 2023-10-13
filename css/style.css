@@ -317,7 +317,8 @@ a {
   padding-top: 5%;
 }
 
-.header__img-logo img {
+.header__img-logo img,
+.header__img-logo svg {
   width: 100%;
 }
 
@@ -3019,6 +3020,7 @@ body.active {
   background-size: cover;
   border-radius: 25px;
   border-top: 8px solid #32599E;
+  overflow-y: scroll;
 }
 
 .form__modal-content::after {
@@ -3611,7 +3613,7 @@ textarea.modal__form-input {
 }
 
 .swiper-wrapper.s-batteries__items.bp700 {
-  display: none;
+  display: none !important;
 }
 
 .s-batteries__item:nth-child(2n) {
@@ -4613,8 +4615,16 @@ textarea.modal__form-input {
   padding: 27px 39px;
 }
 
+.p-cards.map .p-products1__bunner-top-bl-img {
+    background: #203569;
+}
+
 .p-cards .main__bunner__wrapper {
   position: relative;
+}
+
+.p-cards.map .main__bunner__wrapper {
+    grid-template-columns: 45% auto;
 }
 
 .p-cards .text_h4.products1__bunner__subtitle {
@@ -4633,6 +4643,47 @@ textarea.modal__form-input {
 .p-cards .main__bunner__body {
   max-width: 510px;
 }
+
+.map .map__bunner-desc {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 21px;
+    margin-bottom: 20px;
+}
+.map__select-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.map__bunner-select {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    padding: 8px 18px;
+    appearance: none;
+    background: url('../img/map-select.svg') no-repeat 95% center #fff;
+    border-radius: 5px;
+
+    font-size: 16px;
+    line-height: 21px;
+}
+.map-select__btn {
+    padding: 8px 30px;
+    max-width: 200px;
+    width: 100%;
+    background: #33A648;
+    box-shadow: 6px 6px 12px 12px #00000023;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    user-select: none;
+
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    color: #fff;
+}
+
 
 .p-cards .p-products1__bunner__shadow_1 {
   border-radius: 0px 150px 0px 250px;
@@ -6372,6 +6423,60 @@ textarea.modal__form-input {
   background: rgba(255, 255, 255, 0.2);
   left: -50px;
 }
+
+.map .main__bunner__bl-img {
+    left: -10%;
+}
+.map .p-products1__bunner-img {
+    width: 100%;
+    padding: 0;
+}
+.map .p-products1__bunner__shadow_1 {
+    left: -100px;
+}
+.map .p-map__bunner-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55%;
+    left: -7%;
+    max-width: 800px;
+    width: 100%;
+    /* height: 180px; */
+    transform: translateY(-50%);
+    background: #32599E;
+    border-radius: 0 30px 30px 180px;
+    z-index: 3;
+    padding: 55px 0px 40px 0px; 
+}
+.map .bunner-adaptive {
+    display: none;
+}
+.map .p-map__bunner-blocks {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+.map .bunner__info-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+.map .bunner__info-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 21px;
+    margin-bottom: 10px;
+}
+.map .bunner__info-subtitle {
+    font-family: "MuseoSansCyrl300";
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    white-space: pre-line;
+}
+
 .hefte .p-products1__s-why {
   padding-top: 20px;
 }
@@ -7337,6 +7442,19 @@ textarea.modal__form-input {
   margin-bottom: 46px;
 }
 
+.map ::-webkit-scrollbar {
+    width: 10px; /* ширина scrollbar */
+}
+.map ::-webkit-scrollbar-track {
+    background: #DCE2EC; /* цвет дорожки */
+    border-radius: 20px;
+}
+.map ::-webkit-scrollbar-thumb {
+    background: #32599E;
+    border-radius: 20px; /* закругления плашки */
+    border: 1px solid white; /* padding вокруг плашки */
+}
+
 .map .header__main {
   background: #32599E;
 }
@@ -7427,6 +7545,30 @@ textarea.modal__form-input {
 .map [class*=copyrights-pane] {
   display: none !important;
 }
+.map__toggle {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    z-index: 2;
+    display: none;
+}
+.map__toggle-btn {
+    padding: 5px 20px 10px;
+    background: #fff;
+    border-radius: 0 0 20px 20px;
+    width: 100px;
+    border: 1px solid #32599E;
+
+    color: #32599E;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration: underline;
+}
+.map__toggle-btn.active-toggle {
+    background: #32599E;
+    color: #fff;
+}
 .map .map__points {
   position: absolute;
   top: 42px;
@@ -7435,9 +7577,15 @@ textarea.modal__form-input {
   z-index: 2;
 }
 .map .points__header {
-  border-radius: 38px 38px 0px 0px;
-  padding: 49px 26px 27px;
-  background: #DCE2EC;
+  border-radius: 30px 30px 0px 0px;
+  padding: 27px 30px 20px;
+  background: #32599E;
+}
+.map .points__header-title {
+    color: #96ABCF;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 21px;
 }
 .points__header-btn {
     display: none !important;
@@ -7527,8 +7675,8 @@ textarea.modal__form-input {
   border: 0;
 }
 .map .points__main {
-  background-color: #DCE2EC;
-  padding: 22px 32px;
+  background-color: #fff;
+  padding: 30px;
   color: #32599E;
 }
 .map .points-more {
@@ -7538,16 +7686,28 @@ textarea.modal__form-input {
   height: auto;
   overflow: hidden;
   overflow-y: scroll;
-  height: 450px;
+  height: 350px;
+  padding: 10px 20px 0 40px;
 }
 .map .points__item {
-  background: url("../img/placemark__ico.svg") no-repeat;
-  background-position: center right;
-  background-size: 26px 31px;
+    position: relative;
   margin-bottom: 40px;
 }
+.map .points__item::before {
+    content: '';
+    position: absolute;
+    top: -2%;
+    left: -15%;
+    width: 30px;
+    height: 35px;
+    background: url("../img/placemark__ico.svg") no-repeat;
+    background-size: contain;
+}
+.map .selected__point .points__item::before {
+    display: none;
+}
 .map .points__item:hover {
-  opacity: 0.7;
+  opacity: 0.9;
   cursor: pointer;
 }
 .map .points__item-title {
@@ -7555,6 +7715,13 @@ textarea.modal__form-input {
   font-size: 20px;
   line-height: 21px;
   margin-bottom: 10px;
+}
+.map .points__item-text {
+    font-family: "MuseoSansCyrl300";
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
+    white-space: pre-line;
 }
 .map .item__text-link {
   text-decoration: underline;
@@ -8102,8 +8269,13 @@ textarea.modal__form-input {
     left: -5%;
   }
   .hefte .filter__items {
-    -ms-grid-columns: (auto auto)[2];
+    /* -ms-grid-columns: (auto auto)[2]; */
     grid-template-columns: repeat(2, auto auto);
+  }
+  .map .p-map__bunner-info {
+    max-width: max-content;
+    left: 0;
+    width: 95%;
   }
   .map .map__points {
     top: 20px;
@@ -8186,9 +8358,18 @@ textarea.modal__form-input {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 0 0 0 280px;
   }
+  .map .p-products1__bunner__shadow_1 {
+    left: -10%;
+  }
   .p-cards .main__bunner__img.p-products1__bunner-img {
     width: 85%;
     border-radius: 0 0 0 350px;
+  }
+  .map .main__bunner__img.p-products1__bunner-img {
+    width: 100%;
+  }
+  .map .p-map__bunner-blocks {
+    gap: 15px;
   }
   .p-cards .main__bunner__wrapper {
     gap: 110px;
@@ -8529,6 +8710,21 @@ textarea.modal__form-input {
   .p-cards .text_h2_s-batteries {
     margin-bottom: 30px;
   }
+  .map .main__bunner__bl-img {
+    left: -10%;
+  }
+  .map .p-map__bunner-info {
+    top: 60%;
+    left: -25%;
+    padding: 20px;
+    width: 90%;
+  }
+  .map .p-products1__bunner__shadow_1 {
+    left: -35%;
+  }
+  .map .bunner__info-block {
+    flex-direction: column;
+  }
   .accumulators-why .series-why__bl-img {
     width: 295px;
     height: 218px;
@@ -8603,7 +8799,7 @@ textarea.modal__form-input {
   .main__bunner-slide {
     flex-direction: column;
   }
-  .main__bunner__fon {
+  .swiper .main__bunner__fon {
     margin-bottom: 100px;
   }
   .main__bunner__bl-button {
@@ -8624,6 +8820,74 @@ textarea.modal__form-input {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
+  .map-select__btn {
+    margin-bottom: 20px;
+  }
+  .map .p-map__bunner-info {
+    position: unset;
+    transform: none;
+    max-width: unset;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .map .p-map__bunner-blocks {
+    flex-direction: column;
+    gap: 0;
+  }
+  .map .p-map__bunner-info {
+    display: none;
+  }
+  .map .p-map__bunner-info.bunner-adaptive {
+    display: block;
+  }
+  .map .bunner__info-subblock {
+    display: flex;
+    gap: 15px;
+  }
+  .map .bunner__info-block {
+    position: relative;
+    padding: 10px 0;
+    width: 100%;
+  }
+  .map .bunner__info-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5vw;
+    width: 100vw;
+    border-top: 1px solid #fff;
+  }
+  .map .bunner__info-block::after {
+    content: '+';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 10px;
+    height: 21px;
+    font-size: 22px;
+    color: #fff;
+  }
+  .map .bunner__info-subblock {
+    display: none;
+  }
+  .map .info-open .bunner__info-subblock {
+    display: flex;
+  }
+  .map .bunner__info-block.info-open::after {
+    content: '-';
+  }
+  .map__points,
+  .map-element {
+    display: none;
+  }
+  .map-active {
+    display: block;
+  }
+  .map__toggle {
+    display: flex;
+  }
+
   .mn-products__body {
     grid-gap: 15px;
   }
@@ -9534,6 +9798,10 @@ textarea.modal__form-input {
     width: 100%;
     padding-bottom: 30px;
   }
+  .map .p-products1__body {
+    padding-top: 15px;
+    padding-bottom: 0;
+  }
   .p-cards .text_h4.products1__bunner__subtitle {
     font-size: 14px;
     line-height: 16px;
@@ -10032,11 +10300,42 @@ textarea.modal__form-input {
 
   .map .map__points {
     position: unset;
+    margin-top: 50px;
     width: 100%;
   }
   .map .points__header {
     border-radius: 0;
-    padding-bottom: 25px;
+    background: #fff;
+    padding: 0;
+    padding-left: 30px;
+    margin-bottom: 15px;
+  }
+  .map .points__header-title {
+    color: #32599E;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 15px;
+  }
+  .map .points__main {
+    padding-top: 0;
+  }
+  .map .points__items {
+    padding-left: 40px;
+    overflow-y: visible;
+    height: 100%;
+  }
+  .map .points__item::before {
+    width: 20px;
+    height: 25px;
+    left: -30px;
+  }
+  .map .points__item-title {
+    font-size: 14px;
+    line-height: 15px;
+  }
+  .map .points__item-text {
+    font-size: 12px;
+    line-height: 15px;
   }
   .map .points__footer {
     border-radius: 0;

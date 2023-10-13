@@ -440,10 +440,12 @@ window.onload = function () {
 
 
 function togglingMenu() {
-    pointsMore.forEach(item => {
-        item.classList.toggle('hidden');
-    });
-    pointsBody.classList.toggle('hidden');
+    if (window.innerWidth > 700) {
+        pointsMore.forEach(item => {
+            item.classList.toggle('hidden');
+        });
+        pointsBody.classList.toggle('hidden');
+    }
 }
 
 //   function togglingBtns(btns) {
@@ -465,14 +467,62 @@ function togglingMenu() {
       });
   });
 
+  const bunnerInfoBlocks = document.querySelectorAll('.bunner__info-block');
+
+  bunnerInfoBlocks.forEach(block => {
+    block.addEventListener('click', () => {
+        block.classList.toggle('info-open');
+    });
+  });   
+
+  const mapToggleBtns = document.querySelectorAll('.map__toggle-btn'),
+        mapList = document.querySelector('.map__points'),
+        mapElement = document.querySelector('#yandex-map');
+        
+  const toggleClass = (removeEl, addEl, className) => {
+    removeEl.classList.remove(className);
+    addEl.classList.add(className);
+  };
+
+  mapToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        mapToggleBtns.forEach(item => {
+            item.classList.remove('active-toggle');
+        })
+        btn.classList.toggle('active-toggle');
+
+        if (btn.id == 'toggle-map') {
+            toggleClass(mapList, mapElement, 'map-active')
+        } else if (btn.id == 'toggle-list') {
+            toggleClass(mapElement, mapList, 'map-active')
+        }
+    });
+  });
+
+  mapButtons.forEach(item => {
+    item.addEventListener('click', () => {
+        toggleClass(mapList, mapElement, 'map-active');
+        mapToggleBtns.forEach(item => {
+            item.classList.remove('active-toggle');
+            if (item.id == "toggle-map") {
+                item.classList.add('active-toggle');
+            }
+        })
+    });
+})
+
     // Точки на карте
   let placemarks = [];
 
-  mapButtons.forEach(item => {
+  const correctCoordinates = (element) => {
     let mark = {};
-    let strCoords = item.getAttribute('data-map-coords')?.split(',');
-    mark[item.getAttribute('data-id-point')] = strCoords ? [Number(strCoords[0]), Number(strCoords[1])] : null;
-    placemarks.push(mark);
+    let strCoords = element.getAttribute('data-map-coords')?.split(',');
+    mark[element.getAttribute('data-id-point')] = strCoords ? [Number(strCoords[0]), Number(strCoords[1])] : null;
+    return mark;
+  };
+
+  mapButtons.forEach(item => {
+    placemarks.push(correctCoordinates(item));
   });
 
   function init() {
@@ -521,11 +571,21 @@ function togglingMenu() {
         // })
     })
 
+    const citySelectForm = document.querySelector('.map__select-form'),
+        cityPointsTitle = document.querySelector('.points__header-title');
+
+  citySelectForm.addEventListener('submit', (e) => {
+    const select = e.target.querySelector('#map-select');
+    e.preventDefault();
+    cityPointsTitle.innerHTML = select.value;
+
+    goToPoint(e.target.querySelector(':checked').getAttribute('data-map-coords').split(','));
+  }); 
+
     mapButtons.forEach(button => {
         if (pointMenu.classList.contains('hidden')) {
             button.classList.remove('list__item-hover');
         }
-        
 
         button.addEventListener('click', () => {
             // if (!pointMenu.classList.contains('hidden')) {
@@ -560,7 +620,7 @@ function togglingMenu() {
       })
     
       function goToPoint(coordinates) {
-        map.setCenter(coordinates, 15)
+        map.setCenter(coordinates, 10)
       }
   }
   if (document.querySelector('#yandex-map')) {
