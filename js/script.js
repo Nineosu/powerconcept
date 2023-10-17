@@ -528,7 +528,7 @@ function togglingMenu() {
   function init() {
     // Создание центральной точки
     let map = new ymaps.Map('yandex-map', {
-        center: [55.790236237572174,58.94949837657935],
+        center: [parseFloat(map_coords_first[0]),parseFloat(map_coords_first[1])],
         zoom: 6
     });
 
@@ -576,7 +576,7 @@ function togglingMenu() {
 
   citySelectForm.addEventListener('submit', (e) => {
     const select = e.target.querySelector('#map-select');
-    e.preventDefault();
+    // e.preventDefault();
     cityPointsTitle.innerHTML = select.value;
 
     goToPoint(e.target.querySelector(':checked').getAttribute('data-map-coords').split(','));
